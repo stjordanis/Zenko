@@ -118,4 +118,4 @@ You can:
 
    add_a_storage_location
    add_a_transient_source_storage_location
-   location_status
+   edit_a_storage_location
