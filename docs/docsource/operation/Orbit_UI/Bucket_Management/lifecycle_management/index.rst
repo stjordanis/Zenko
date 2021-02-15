@@ -32,7 +32,8 @@ however, the following transition rules can only be defined using API calls.
 * Setting the Days field to zero
 * Setting a custom ID
 
-See :version-ref:`Bucket Lifecycle Operations<http://documentation.scaity.com/Zenko/{version}/reference/cloudserver/bucket_operations/bucket_lifecycle_operations/index.html>` in :version-ref:`Zenko Reference<http://documentation.scaity.com/Zenko/{version}/reference/index.html>`
+See :version-ref:`Bucket Lifecycle Operations <http://documentation.scality.com/Zenko/{version}/reference/cloudserver/bucket_operations/bucket_lifecycle_operations/index.html>` in :version-ref:`Zenko Reference 
+<http://documentation.scality.com/Zenko/{version}/reference/index.html>`
 
 .. note::
 

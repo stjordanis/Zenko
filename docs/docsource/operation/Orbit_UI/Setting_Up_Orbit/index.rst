@@ -12,7 +12,7 @@ Orbit is configured, you can unlink it from a |product| instance as well.
 
    Setting Up a Sandbox Instance <Setting_up_a_Sandbox_Instance>
    Setting Up a Full Orbit Installation <Setting_Up_a_Full_Orbit_Installation>
-   Unlink Orbit from |product| <Unlinking_Orbit>   
+   Unlinking Orbit <Unlinking_Orbit>
 
 Registering Orbit to |product|
 ------------------------------
