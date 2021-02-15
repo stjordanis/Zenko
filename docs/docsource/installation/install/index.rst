@@ -11,4 +11,5 @@ configured, you must install Helm, then use it to install |product|.
 
    install_helm
    install_zenko
+   installing_xdm
 
