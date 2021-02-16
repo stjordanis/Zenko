@@ -12,21 +12,21 @@ Prerequisites
 
 - Your disk must be partioned as follows:
    
-  +-------------+--------+-----------+
-  | Partition # |  Size  |  Service  |
-  +=============+========+===========+
-  | 1           | 300GiB | Mongo     |
-  +-------------+--------+-----------+
-  | 2           | 100GiB | Kafka     |
-  +-------------+--------+-----------+
-  | 3           | 100GiB | S3Data    |
-  +-------------+--------+-----------+
-  | 4           | 10GiB  | Redis     |
-  +-------------+--------+-----------+
-  | 5           | 10GiB  | Zookeeper |
-  +-------------+--------+-----------+
+  +-------------+---------+-----------+
+  | Partition # | Size    | Service   |
+  +=============+=========+===========+
+  | 1           | 300 GiB | Mongo     |
+  +-------------+---------+-----------+
+  | 2           | 100 GiB | Kafka     |
+  +-------------+---------+-----------+
+  | 3           | 100 GiB | S3Data    |
+  +-------------+---------+-----------+
+  | 4           | 10 GiB  | Redis     |
+  +-------------+---------+-----------+
+  | 5           | 10 GiB  | Zookeeper |
+  +-------------+---------+-----------+
 
-  If necessary, partition your disk with:
+  If necessary, partition your disk:
 
   .. code::
       
@@ -46,18 +46,18 @@ Prerequisites
 Deploying MetalK8s
 ------------------
 
-For more information on MetalK8s installation, see *Installation* in the MetalK8s' documentation.
+Refer to MetalK8s *Installation* for details on its deployment.
 
 Deploying XDM-Operator
 ----------------------
 
-#. From your terminal, create a namespace for XDM with:
+#. From your terminal, create a namespace for XDM:
 
    .. code::
 
       /srv/scality/metalk8s-2.6.0/solutions.sh create-env --name zenko
 
-#. Install XDM Base with:
+#. Install XDM Base:
 
    .. code::
 
@@ -66,7 +66,7 @@ Deploying XDM-Operator
       kubectl -n zenko rollout status --timeout 10m deploy kubedb-operator
       sed "s/SOLUTION_ENV/zenko/g" /srv/scality/zenko-base-2.0.0-alpha.3/operator.      yaml | kubectl apply -f -
 
-#. Install XDM-Operator with:
+#. Install XDM-Operator:
 
    .. code::
 
@@ -78,7 +78,7 @@ Deploying XDM-Operator
 Deploying XDM
 -------------
 
-#. Create a Keycloak realm for XDM with:
+#. Create a Keycloak realm for XDM:
 
    .. code::
 
@@ -150,13 +150,13 @@ Deploying XDM
       }
       EOF
 
-#. Create a yaml file for the new XDM's version with:
+#. Create a yaml file for the new XDM's version:
 
    .. code::
 
       kubectl apply --namespace zenko -f /srv/scality/zenko-2.0.0-alpha.3/zenkoversion.yaml
 
-#. Create storage classes with:
+#. Create storage classes:
 
    .. code::
 
@@ -211,7 +211,7 @@ Deploying XDM
       ---
       EOF
 
-#. Create XDM volumes with:
+#. Create XDM volumes:
 
    .. code::
 
@@ -273,7 +273,7 @@ Deploying XDM
       
       kubectl wait --for condition=Ready=True --timeout 5s volume zenko-mongodb       zenko-kafka zenko-s3data zenko-redis zenko-zookeeper
 
-#. Create an XDM resource with:
+#. Create an XDM resource:
 
    .. code::
 
@@ -344,7 +344,7 @@ Deploying XDM
       kubectl wait --for condition=Available --timeout 10m -n zenko zenko/      
       zenko-instance
 
-#. Create a Keycloak user for the XDM instance with:
+#. Create a Keycloak user for the XDM instance:
 
    .. code::
       
@@ -427,7 +427,7 @@ Prerequisites
 Procedure
 ~~~~~~~~~
 
-#. Retrieve ``ACCESS_TOKEN``, ``TOKEN``, and ``INSTANCE_ID`` with:
+#. Retrieve ``ACCESS_TOKEN``, ``TOKEN``, and ``INSTANCE_ID``:
 
    .. code::
       
@@ -464,7 +464,7 @@ Procedure
               jq -rc '.instanceIds[0]'
       )
 
-#. Create an account with:
+#. Create an account:
 
    .. code::
       
@@ -485,7 +485,7 @@ Procedure
           "http://management.zenko.local/api/v1/config/${INSTANCE_ID}/user" | \
           jq '.'
 
-#. Create an additional S3 endpoint with:
+#. Create an additional S3 endpoint:
 
    .. code::
       
@@ -504,7 +504,7 @@ Procedure
           "http://management.zenko.local/api/v1/config/${INSTANCE_ID}/endpoint" | \
           jq '.'
 
-#. Generate the account's key with:
+#. Generate the account's key:
 
    .. code::
       
